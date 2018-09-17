@@ -3,38 +3,27 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'xhfblog',
+    title: 'nuxtdemo',
     meta: [
       { charset: 'utf-8' },
-      { hid: 'description', name: 'description', content: 'blog' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  css:[
-    {src:'~assets/css/reset.css'},
-    {src:'element-ui/lib/theme-chalk/index.css'}
-  ],
   plugins: [
-    {src:'~plugins/axios', ssr: false},
-    {src:'~plugins/element-ui', ssr: false}
+    {src: '~/plugins/global_ssr.js', ssr: true}
   ],
-  proxy: [ 
-    ['/api', {target: 'http://**.com'}] 
-  ], 
-  env: {
-    baseUrl: 'http://112.74.181.229:7031/custAppApi'
-  },
   /*
   ** Customize the progress bar color
   */
-  loading: false,
+  loading: { color: '#3B8070' },
   /*
   ** Build configuration
   */
   build: {
-    vendor: ['axios','element-ui'],/*多个地方引用，防止多次打包*/
     /*
     ** Run ESLint on save
     */
@@ -47,9 +36,13 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    },
-
-
+    }
+  },
+  router: {
+    middleware: 'header',
+    scrollBehavior: function (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    }
   }
 }
 

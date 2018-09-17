@@ -1,22 +1,9 @@
 <template>
   <div>
-    <v-header></v-header>
-    <main class="content-container" ref="container" :class="headFixed == true ? 'marginTop' : ''">
-      <nuxt/>
-    </main>
-    <v-footer></v-footer>
+    <nuxt/>
   </div>
 </template>
-<script>
-  import VHeader from '~/components/common/header'
-  import VFooter from '~/components/common/footer'
-  export default {
-    components: {
-      VHeader,
-      VFooter
-    }
-  }
-</script>
+
 <style>
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

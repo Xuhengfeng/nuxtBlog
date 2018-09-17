@@ -1,6 +1,6 @@
-# xhfblog
+# nuxtdemo
 
-> blog
+> Nuxt.js project
 
 ## Build Setup
 

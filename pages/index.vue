@@ -3,41 +3,59 @@
     <div>
       <app-logo/>
       <h1 class="title">
-        xhfblog
+        nuxtdemo
       </h1>
       <h2 class="subtitle">
-        blog
+        Nuxt.js project
       </h2>
+      <div class="links">
+        <button @click="btn()">test</button>
+
+          <!-- {{userInfo.name}}
+          {{userInfo.age}}
+          {{userInfo.sex}} -->
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
+
 export default {
   components: {
     AppLogo
   },
-  mounted() {
-    console.log(this)
-    console.log(this.$http.get())
+  async asyncData(){
+    // console.log(process)
+    // https://api.myjson.com/bins/yn6hc
+    console.log($url.URL.SHOPERS_LIST)
+    let userInfo = await $axios.post($url.URL.BROKERS_LIST,{'scity': 'beihai'});
+    console.log(userInfo.data)
+    // return {
+    //   userInfo: userInfo.data
+    // }
   },
+  mounted() {
+    //  console.log($url)
+    document.cookie="scity=beihai";
+    document.cookie="a=fasdf";
+    document.cookie="b=fdasd";
+    document.cookie="c=asdf";
+    
+  }
 }
 </script>
 
 <style>
-html,body{
-  width: 100%;
-  min-width: 1200px;
-}
 .container {
-  width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
   display: block;
