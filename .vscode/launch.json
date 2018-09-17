@@ -1,0 +1,10 @@
+{
+    "name": "Launch via NPM",
+    "type": "node",
+    "request": "launch",
+    "runtimeExecutable": "npm",
+    "runtimeArgs": [
+      "dev"	//这里的dev就对应package.json中的scripts中的dev
+    ],
+      "port": 9229	//这个端口是调试的端口，不是项目启动的端口
+  }

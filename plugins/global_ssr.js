@@ -1,8 +1,8 @@
 /*
  * @Author: 徐横峰 
  * @Date: 2018-04-30 23:32:56 
- * @Last Modified by: 564297479@qq.com
- * @Last Modified time: 2018-09-17 18:08:32
+ * @Last Modified by: Xuhengfeng
+ * @Last Modified time: 2018-09-18 00:50:05
  */
 //重新封装axios
 import Vue from 'vue'
@@ -37,18 +37,15 @@ Vue.component(Input.name, Input);//输入框
 Vue.component(Rate.name, Rate);//星星
 
 
-let cancel ,promiseArr = {}
-const CancelToken = axios.CancelToken;
 let path_type = 'dev';
 let options = {
   baseURL: path_type=='dev' ? 'http://112.74.181.229:7031/custAppApi/' : ''
 }
-
 options.headers = {
   'Content-Type': 'application/json'
 }
-axios.defaults.timeout = 10000;
 let newAxios = axios.create(options)
+newAxios.defaults.timeout = 10000;
 
 //请求拦截器
 newAxios.interceptors.request.use(
@@ -64,14 +61,13 @@ newAxios.interceptors.request.use(
   }
 );
 
-// 我这些没有问题  我是直接拿我vue-cli 里 项目用的
-// 你把这块调试一下应该就可以了 嗯  
-
 //响应拦截器即异常处理
-axios.interceptors.response.use(response => {
-    return response
+newAxios.interceptors.response.use(response => {
+  console.log('请求结果:',response.data);
+  return response
 }, err => {
     if (err && err.response) {
+      console.log('请求结果:',err.response.data);
       switch (err.response.status) {
         case 400:MessageBox.alert('错误请求');break;
         case 401:MessageBox.alert('未授权，请重新登录');break;
@@ -88,13 +84,10 @@ axios.interceptors.response.use(response => {
         default:MessageBox.alert(`连接错误${err.response.status}`);
       }
     }else{
-    //  MessageBox.alert('连接到服务器失败')
+     MessageBox.alert('连接到服务器失败')
     }
-    // message.error(err.message)
-    return Promise.resolve(err.response)
+    return Promise.resolve(err.response.data)
 })
-
-
 
 global.$axios = newAxios;
 global.$url = url;

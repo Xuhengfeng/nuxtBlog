@@ -9,12 +9,9 @@
         Nuxt.js project
       </h2>
       <div class="links">
-        <button @click="btn()">test</button>
-
-          <!-- {{userInfo.name}}
-          {{userInfo.age}}
-          {{userInfo.sex}} -->
+        <nuxt-link to="/mine">1212</nuxt-link>
       </div>
+      <div v-for="(item,index) in brokers" :key="index">{{item.sdid}}</div>
     </div>
   </section>
 </template>
@@ -27,17 +24,12 @@ export default {
     AppLogo
   },
   async asyncData(){
-    // console.log(process)
-    // https://api.myjson.com/bins/yn6hc
-    console.log($url.URL.SHOPERS_LIST)
-    let userInfo = await $axios.post($url.URL.BROKERS_LIST,{'scity': 'beihai'});
-    console.log(userInfo.data)
-    // return {
-    //   userInfo: userInfo.data
-    // }
+    let brokers = await $axios.post($url.URL.BROKERS_LIST,{'scity': 'beihai'});
+    return {
+      brokers: brokers.data.data
+    }
   },
   mounted() {
-    //  console.log($url)
     document.cookie="scity=beihai";
     document.cookie="a=fasdf";
     document.cookie="b=fdasd";
