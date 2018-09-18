@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import {Message, MessageBox, Notification,
-    Dialog,Button, Pagination, Checkbox,
-    Steps, Step,Tooltip,Table,TableColumn,
-    Form,FormItem,Input,Rate} from 'element-ui';//导入elementjs
+        Dialog,Button, Pagination, Checkbox,
+        Steps, Step,Tooltip,Table,TableColumn,
+        Form,FormItem,Input,Rate} from 'element-ui'//导入elementjs
+import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.prototype.$alert = MessageBox.alert//弹出框
 Vue.prototype.$confirm = MessageBox.confirm//确认框
 Vue.prototype.$prompt = MessageBox.prompt//可编辑弹出框
 Vue.prototype.$message = Message//消息提示
 Vue.prototype.$notify = Notification //通知
-
 Vue.component(Table.name, Table);//表格
 Vue.component(TableColumn.name, TableColumn);//表格
 Vue.component(Button.name, Button);//按钮

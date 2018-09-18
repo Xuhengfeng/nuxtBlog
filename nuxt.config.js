@@ -14,7 +14,8 @@ module.exports = {
     ]
   },
   plugins: [
-    {src: '~/plugins/global_ssr.js', ssr: true}
+    {src: '~/plugins/global_ssr.js', ssr: true},
+    {src: '~/plugins/element_ui.js', ssr: false},
   ],
   /*
   ** Customize the progress bar color
@@ -39,7 +40,7 @@ module.exports = {
     }
   },
   router: {
-    middleware: 'header',
+    middleware: 'auth',
     scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 }
     }
