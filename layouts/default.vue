@@ -1,8 +1,20 @@
 <template>
   <div>
+    <!-- <VHeader></VHeader> -->
     <nuxt/>
+    <!-- <VFooter></VFooter> -->
   </div>
 </template>
+<script>
+import VHeader from "~/components/common/header"
+import VFooter from "~/components/common/footer"
+export default {
+  components: {
+    VHeader,
+    VFooter
+  }
+}
+</script>
 
 <style>
 html {
@@ -15,7 +27,6 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;

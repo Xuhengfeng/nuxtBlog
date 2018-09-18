@@ -13,6 +13,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  css: [
+    {src: '~/assets/css/reset.css'}
+  ],
   plugins: [
     {src: '~/plugins/global_ssr.js', ssr: true},
     {src: '~/plugins/element_ui.js', ssr: false},

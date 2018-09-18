@@ -5,7 +5,16 @@
                 <a href="/mine/1">问题一</a>
                 <a href="/mine/2">问题二</a>
                 <a href="/mine/3">问题三</a>
-                <a href="/">首页</a>
+                <nuxt-link to="/">首页</nuxt-link>
+
+                <nuxt-link to="/mine/1">1</nuxt-link>
+                <nuxt-link to="/mine/2">2</nuxt-link>
+                <nuxt-link to="/mine/3">3</nuxt-link>
+
+
+                <nuxt-link :to="{name:'mine-id',params:{id:'1'}}">111</nuxt-link>
+                <nuxt-link :to="{name:'mine-id',params:{id:'2'}}">222</nuxt-link>
+
             </li>
         </ul>
     </div>

@@ -1,10 +1,10 @@
-// import Vue from 'vue'
-// import Vuex from 'vuex'
-// import axios from 'axios'
+import Vue from 'vue'
+import Vuex from 'vuex'
+import axios from 'axios'
 
-// Vue.use(Vuex)
+Vue.use(Vuex)
 
-// const state = {
+const state = {
 // 	wordpressAPI: 'http://visney.cn:81',
 // 	wordpressAPIForJob: 'http://visney.cn:8082',
 // 	headProdNav: {},
@@ -12,9 +12,9 @@
 // 	headJobNav: {},
 // 	indexLinksData: null,
 // 	indexShowLinks: false
-// };
+};
 
-// const mutations = {
+const mutations = {
 // 	//头部导航产品与新闻信息
 // 		setHeadProdNav(state,data){
 // 			state.headProdNav = data
@@ -31,12 +31,13 @@
 // 		setIndexShowLinks(state,bool){
 // 			state.indexShowLinks = bool
 // 		}	
-// };
+};
 
-// const getters = {
-// };
+const getters = {
 
-// const actions = {
+};
+
+const actions = {
 // 	async nuxtServerInit({commit,state,req}) {
 		
 // 		//产品导航
@@ -52,13 +53,13 @@
 // 			let indexLinksData = await axios(`${state.wordpressAPI}/link/selectAll`);
 // 			commit('setIndexLinksData',indexLinksData.data);
 // 	}
-// };
+};
 
-// const store = () => new Vuex.Store({
-// 	state,
-// 	getters,
-// 	mutations,
-// 	actions
-// })
+const store = () => new Vuex.Store({
+	state,
+	getters,
+	mutations,
+	actions
+})
 
-// export default store
+export default store
