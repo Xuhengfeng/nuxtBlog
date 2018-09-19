@@ -7,19 +7,22 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'Nuxt.js project'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   css: [
-    {src: '~/assets/css/reset.css'}
+    {src: '~/assets/css/reset.css'},
+    {src: '~/assets/css/pageTransition.css'},
   ],
   plugins: [
     {src: '~/plugins/global_ssr.js', ssr: true},
     {src: '~/plugins/element_ui.js', ssr: false},
+    {src: '~/plugins/px2rem.js', ssr: false},
   ],
+  // transition: 'page',
   /*
   ** Customize the progress bar color
   */

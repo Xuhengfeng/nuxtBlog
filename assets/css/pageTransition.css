@@ -1,0 +1,10 @@
+.page-enter-active,
+.page-leave-active{
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+}
+.page-enter,
+.page-active{
+    opacity: 0;
+    font-size: 26px;
+}

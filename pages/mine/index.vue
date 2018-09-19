@@ -1,5 +1,7 @@
 <template>
     <div class="mine">
+        我的
+
         <ul>
             <li>
                 <a href="/mine/1">问题一</a>
@@ -19,3 +21,13 @@
         </ul>
     </div>
 </template>
+<script>
+export default {
+    
+}
+</script>
+<style scoped>
+.mine{
+    background: green;
+}
+</style>
