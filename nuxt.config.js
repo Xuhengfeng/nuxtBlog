@@ -21,12 +21,14 @@ module.exports = {
     {src: '~/plugins/global_ssr.js', ssr: true},
     {src: '~/plugins/element_ui.js', ssr: false},
     {src: '~/plugins/px2rem.js', ssr: false},
+    {src: '~/plugins/filters.js'},
   ],
   // transition: 'page',
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#3B8070' },
+  // loading: { color: '#3B8070' },
+  loading: false,
   /*
   ** Build configuration
   */
