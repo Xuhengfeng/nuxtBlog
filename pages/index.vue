@@ -10,7 +10,6 @@
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
-console.log(111)
 export default {
   components: {
     AppLogo
@@ -25,7 +24,6 @@ export default {
     document.cookie="scity=beihai";
     document.cookie="token=fasdf";    
     document.cookie="user={'name':'Xuhengfeng'}";    
-
   }
 }
 </script>

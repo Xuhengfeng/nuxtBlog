@@ -3,9 +3,13 @@ import {getCookieInServer, getCookieInClient} from '~/plugins/tools.js'
 
 
 export default function({store, error, req, redirect}) {
-    console.log("redirect:", redirect);
     const loggedToken = process.server ? getCookieInServer(req, 'token') : getCookieInClient('token');
     const loggedUser = process.server ? getCookieInServer(req, 'user') : getCookieInClient('user');
+    console.log("redirect:", redirect);
+    
+    if(!store.state.user) {
+        return redirect('/login')
+    }
     // console.log("store:", store);
     // console.log("error:", error);
     // console.log("req:", req);

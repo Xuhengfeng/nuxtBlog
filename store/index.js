@@ -5,6 +5,7 @@ import axios from 'axios'
 Vue.use(Vuex)
 
 const state = {
+	user: null,
 // 	wordpressAPI: 'http://visney.cn:81',
 // 	wordpressAPIForJob: 'http://visney.cn:8082',
 // 	headProdNav: {},
